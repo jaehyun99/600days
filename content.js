@@ -3,58 +3,109 @@ const siteContent = {
 
   hero: {
     image: "images/01.jpg",
+
+    // 첫 화면 사진 위치
+    position: "50% 35%",
+
     kicker: "D + 600",
     title: "우리의\n600일",
-    subtitle: "너와 함께한 계절들을\n한 장씩 담아봤어."
+
+    subtitle: "우리의 추억을 담아봤어."
   },
 
   intro: {
     kicker: "600 DAYS WITH YOU",
-    title: "평범한 하루도\n너와 함께라서\n더 특별한 추억이 됐어.",
-    body: "사진들을 다시 보다 보니까\n우리의 시간들이 생각보다 더 따뜻하고\n예쁘게 쌓여 있었더라."
+
+    title:
+      "평범한 하루도\n너와 함께라서\n더 특별한 추억이 됐어.",
+
+    body:
+      "사진들을 다시 보다 보니까\n우리의 시간들이 생각보다 더 따뜻하고\n예쁘게 쌓여 있었더라."
   },
 
   photos: [
     {
       file: "images/02.jpg",
-      caption: "가까이 찍은 사진들까지도\n나한텐 다 소중한 추억이야."
+
+      // 향수 만들러 간 날
+      position: "50% 30%",
+
+      caption:
+        "우리가 처음 향수 만들러 간 날"
     },
+
     {
       file: "images/03.jpg",
-      caption: "같이 있는 모습이\n이제는 제일 편하고 좋아."
+
+      // 반지 만들러 간 날
+      position: "50% 35%",
+
+      caption:
+        "우리가 같이 반지 만들러 간 날 ㅎㅎ"
     },
+
     {
       file: "images/04.jpg",
-      caption: "어디를 가든\n네가 있으면 그날이 더 특별해졌어."
+
+      // 시각 체험
+      position: "50% 30%",
+
+      caption:
+        "공듀랑 같이 시각 체험 하러 간 날\n(흠, 이 때는 멋있었군)"
     },
+
     {
       file: "images/05.jpg",
-      caption: "예쁜 풍경 앞에서도\n제일 먼저 눈에 들어오는 건 너야."
+
+      // 작년 여름
+      position: "50% 30%",
+
+      caption:
+        "작년 여름 우리의 모습.\n항상 내 눈에 들어오는 너의 모습"
     },
+
     {
       file: "images/06.jpg",
-      caption: "함께 축하해 주고\n함께 기뻐할 수 있어서 더 행복했어."
+
+      // 졸업식
+      position: "47% 32%",
+
+      caption:
+        "공듀의 졸업식날.\n멋진 사회인이 된 우리 공듀"
     },
+
     {
       file: "images/07.jpg",
-      caption: "앞으로도 지금처럼\n많은 계절을 같이 보내자."
+
+      // 마지막 사진
+      position: "50% 30%",
+
+      caption:
+        "앞으로도 지금처럼\n많은 시간을 같이 보내자."
     }
   ],
 
   numberSection: {
     before: "그러다 보니 어느새",
+
     number: "600",
-    after: "우리가 함께한 날들이\n이렇게 많이 쌓였네.",
+
+    after:
+      "우리가 함께한 날들이\n이렇게 많이 쌓였네.",
+
     insertAfterPhotoIndex: 2
   },
 
   letterIntro: {
     small: "그리고 마지막으로,",
-    title: "너에게 하고 싶은 말."
+
+    title:
+      "너에게 하고 싶은 말."
   },
 
   letter: {
     to: "To. 혜원 공듀에게",
+
     body: `벌써 우리가 만난 지 600일이네.
 
 600일이라고 하니까 엄청 오래된 것 같기도 하고, 막상 생각해보면 진짜 금방 지나간 것 같아.
@@ -72,12 +123,16 @@ const siteContent = {
 600일 축하하고, 앞으로도 잘 부탁해.
 
 사랑해 ❤️`,
+
     from: "from 재현"
   },
 
   ending: {
     kicker: "600 DAYS",
+
     title: "and counting.",
-    message: "우리의 다음 페이지도\n함께 써 내려가자."
+
+    message:
+      "우리의 다음 페이지도\n함께 써 내려가자."
   }
 };
