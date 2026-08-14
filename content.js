@@ -54,31 +54,21 @@ const siteContent = {
     },
 
     {
-      file: "images/05.jpg",
-
-      // 04. 오른쪽으로 살짝 이동
-      position: "44% 30%",
-
-      caption:
-        "작년 여름 우리의 모습.\n항상 내 눈에 들어오는 너의 모습"
-    },
-
-    {
       file: "images/06.jpg",
-
-      // 05. 왼쪽으로 이동
-      position: "68% 32%",
-
+    
+      // 05번 사진 - 왼쪽 끝부터 시작
+      position: "left 32%",
+    
       caption:
         "공듀의 졸업식날.\n멋진 사회인이 된 우리 공듀"
     },
-
+    
     {
       file: "images/07.jpg",
-
-      // 06. 왼쪽으로 이동
-      position: "65% 30%",
-
+    
+      // 06번 사진 - 왼쪽 끝부터 시작
+      position: "left 30%",
+    
       caption:
         "앞으로도 지금처럼\n많은 시간을 같이 보내자."
     }
