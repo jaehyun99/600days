@@ -6,11 +6,15 @@
 
 :root {
   --page-max: 480px;
+
   --light-bg: #f7f2ea;
   --light-card: #fffdf8;
+
   --dark-bg: #121212;
   --dark-bg-soft: #1a1a1a;
+
   --text-dark: #171717;
+
   --border: #ded6cc;
 }
 
@@ -21,387 +25,887 @@ html {
 
 body {
   min-width: 320px;
+
   background: var(--dark-bg);
-  font-family: -apple-system, BlinkMacSystemFont, "SamsungOne", "Pretendard", "Noto Sans KR", Arial, sans-serif;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SamsungOne",
+    "Pretendard",
+    "Noto Sans KR",
+    Arial,
+    sans-serif;
+
   color: var(--text-dark);
+
   overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
 }
 
 img {
   display: block;
+
   width: 100%;
 }
+
+
+/* ==================================================
+   전체 페이지
+================================================== */
 
 .page {
   width: 100%;
+
   max-width: var(--page-max);
+
   margin: 0 auto;
+
   overflow: hidden;
+
   background: var(--light-bg);
 }
 
+
+/* ==================================================
+   첫 화면
+================================================== */
+
 .hero {
   position: relative;
-  min-height: 680px;
+
+  width: 100%;
+
+  min-height: 650px;
   height: 100svh;
-  max-height: 920px;
+  max-height: 900px;
+
   background: #222;
+
   overflow: hidden;
 }
 
+
+/*
+  object-position은
+  content.js의 position 값으로 덮어씌워집니다.
+*/
 .hero-image,
 .photo-image {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
+  object-position: center center;
 }
+
 
 .hero::after {
   content: "";
+
   position: absolute;
+
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.18) 42%, rgba(0,0,0,0.88) 100%);
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(0, 0, 0, 0.08) 0%,
+
+      rgba(0, 0, 0, 0.15) 40%,
+
+      rgba(0, 0, 0, 0.88) 100%
+    );
 }
+
 
 .hero-content {
   position: absolute;
+
   z-index: 2;
+
   left: 24px;
   right: 24px;
-  bottom: calc(44px + env(safe-area-inset-bottom));
-  color: #fff;
+
+  bottom:
+    calc(
+      44px +
+      env(safe-area-inset-bottom)
+    );
+
+  color: #ffffff;
 }
+
 
 .hero-kicker {
   margin-bottom: 12px;
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 0.28em;
-  color: rgba(255,255,255,0.92);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
 }
 
+
 .hero-title {
-  font-size: clamp(38px, 10vw, 50px);
+  font-size:
+    clamp(
+      38px,
+      10vw,
+      50px
+    );
+
   line-height: 1.13;
+
   letter-spacing: -0.055em;
+
   font-weight: 750;
-  color: #fff;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.65);
+
+  color: #ffffff;
+
+  text-shadow:
+    0 4px 20px
+    rgba(0, 0, 0, 0.65);
 }
+
 
 .hero-subtitle {
   margin-top: 16px;
+
   font-size: 15px;
+
   line-height: 1.85;
-  color: rgba(255,255,255,0.93);
-  text-shadow: 0 2px 10px rgba(0,0,0,0.75);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.93
+    );
+
+  text-shadow:
+    0 2px 10px
+    rgba(0, 0, 0, 0.75);
 }
+
 
 .scroll-hint {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   margin-top: 36px;
+
   font-size: 10px;
+
   letter-spacing: 0.24em;
-  color: rgba(255,255,255,0.72);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
 }
+
 
 .scroll-hint::before {
   content: "";
+
   width: 40px;
+
   height: 1px;
-  background: rgba(255,255,255,0.8);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
 }
+
+
+/* ==================================================
+   인트로
+================================================== */
 
 .intro {
   min-height: 430px;
-  padding: 92px 28px;
+
+  padding:
+    92px
+    28px;
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   background: #fbf8f3;
 }
 
+
 .section-kicker {
   margin-bottom: 18px;
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 0.24em;
+
   color: #756e67;
 }
 
+
 .intro-title {
   font-size: 28px;
+
   line-height: 1.55;
+
   letter-spacing: -0.045em;
+
   font-weight: 650;
+
   color: #161616;
 }
 
+
 .intro-body {
   margin-top: 22px;
+
   font-size: 14px;
+
   line-height: 2;
+
   color: #625d57;
 }
 
+
+/* ==================================================
+   사진 영역
+
+   ★ 여기 중요
+   기존 82svh → 62svh
+
+   가로 사진 얼굴 확대를 크게 줄임
+================================================== */
+
 .photo {
   position: relative;
-  min-height: 620px;
-  height: 82svh;
-  max-height: 900px;
-  background: #222;
+
+  width: 100%;
+
+  min-height: 440px;
+
+  height: 62svh;
+
+  max-height: 620px;
+
+  background: #202020;
+
   overflow: hidden;
 }
 
+
+/*
+  cover 자체는 유지.
+
+  대신 사진 영역을 짧게 만들어서
+  좌우 크롭을 크게 줄임.
+*/
+.photo-image {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+  /*
+    기존 scale(1.01) 제거
+  */
+  transform: scale(1);
+
+  transition:
+    transform
+    2.5s
+    ease;
+}
+
+
+/*
+  기존 1.055는 너무 많이 확대됨.
+
+  거의 티 안 날 정도로만 확대.
+*/
+.photo.active .photo-image {
+  transform: scale(1.01);
+}
+
+
+/* 사진 아래 글씨용 그라데이션 */
+
 .photo::after {
   content: "";
+
   position: absolute;
+
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0.90) 100%);
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(0, 0, 0, 0.01) 25%,
+
+      rgba(0, 0, 0, 0.08) 50%,
+
+      rgba(0, 0, 0, 0.82) 100%
+    );
 }
 
-.photo-image {
-  transform: scale(1.01);
-  transition: transform 3.2s ease;
-}
-
-.photo.active .photo-image {
-  transform: scale(1.055);
-}
 
 .photo-text {
   position: absolute;
+
   z-index: 2;
+
   left: 24px;
   right: 24px;
-  bottom: calc(34px + env(safe-area-inset-bottom));
-  color: #fff;
+
+  bottom:
+    calc(
+      30px +
+      env(safe-area-inset-bottom)
+    );
+
+  color: #ffffff;
 }
+
 
 .photo-number {
   display: block;
-  margin-bottom: 11px;
+
+  margin-bottom: 10px;
+
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 0.26em;
-  color: rgba(255,255,255,0.72);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
 }
 
+
 .photo-caption {
-  max-width: 330px;
+  max-width: 350px;
+
   font-size: 18px;
-  line-height: 1.7;
+
+  line-height: 1.65;
+
   letter-spacing: -0.025em;
+
   font-weight: 560;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 5px 18px rgba(0,0,0,0.65);
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 8px
+      rgba(0, 0, 0, 0.9),
+
+    0 5px 18px
+      rgba(0, 0, 0, 0.65);
 }
+
+
+/* ==================================================
+   600
+================================================== */
 
 .number-section {
   min-height: 530px;
-  padding: 80px 26px;
-  background: var(--dark-bg-soft);
-  color: #fff;
+
+  padding:
+    80px
+    26px;
+
+  background:
+    var(--dark-bg-soft);
+
+  color: #ffffff;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   text-align: center;
 }
+
 
 .number-section p {
   font-size: 15px;
+
   line-height: 1.8;
+
   color: #dedede;
 }
 
+
 .big-number {
-  margin: 20px 0 22px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(92px, 28vw, 126px);
+  margin:
+    20px
+    0
+    22px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      92px,
+      28vw,
+      126px
+    );
+
   line-height: 0.9;
+
   font-weight: 400;
-  color: #fff;
+
+  color: #ffffff;
 }
 
+
+/* ==================================================
+   편지 시작
+================================================== */
+
 .letter-intro {
-  padding: 110px 26px 58px;
-  background: var(--light-bg);
+  padding:
+    110px
+    26px
+    58px;
+
+  background:
+    var(--light-bg);
 }
+
 
 .letter-intro-small {
   font-size: 13px;
+
   color: #6c645d;
 }
 
+
 .letter-intro-title {
   margin-top: 12px;
+
   font-size: 30px;
+
   line-height: 1.45;
+
   letter-spacing: -0.045em;
+
   font-weight: 680;
+
   color: #151515;
 }
 
+
+/* ==================================================
+   편지
+================================================== */
+
 .letter-area {
-  padding: 0 18px 100px;
-  background: var(--light-bg);
+  padding:
+    0
+    18px
+    100px;
+
+  background:
+    var(--light-bg);
 }
 
+
 .letter {
-  padding: 38px 27px 40px;
-  background: var(--light-card);
+  padding:
+    38px
+    27px
+    40px;
+
+  background:
+    var(--light-card);
+
   color: #202020;
-  border: 1px solid var(--border);
+
+  border:
+    1px
+    solid
+    var(--border);
+
   border-radius: 4px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.07);
 }
+
 
 .letter-to {
   margin-bottom: 30px;
+
   font-size: 16px;
+
   line-height: 1.6;
+
   font-weight: 750;
+
   color: #151515;
 }
 
+
 .letter-body {
   font-size: 15px;
+
   line-height: 2.05;
+
   letter-spacing: -0.02em;
+
   color: #282828;
+
   white-space: pre-line;
 }
 
+
 .letter-from {
   margin-top: 38px;
+
   text-align: right;
+
   font-size: 13px;
+
   line-height: 1.7;
+
   color: #625b55;
 }
 
+
+/* ==================================================
+   마지막
+================================================== */
+
 .ending {
   min-height: 700px;
-  padding: 110px 25px calc(110px + env(safe-area-inset-bottom));
+
+  padding:
+    110px
+    25px
+    calc(
+      110px +
+      env(safe-area-inset-bottom)
+    );
+
   background: #101010;
-  color: #fff;
+
+  color: #ffffff;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   text-align: center;
 }
+
 
 .heart {
   margin-bottom: 26px;
+
   font-size: 28px;
-  color: #fff;
-  animation: heartbeat 1.7s ease-in-out infinite;
+
+  color: #ffffff;
+
+  animation:
+    heartbeat
+    1.7s
+    ease-in-out
+    infinite;
 }
+
 
 .ending-kicker {
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 0.28em;
+
   color: #a7a7a7;
 }
 
+
 .ending-title {
   margin-top: 12px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 44px;
+
   line-height: 1.1;
+
   font-weight: 400;
-  color: #fff;
+
+  color: #ffffff;
 }
+
 
 .ending-message {
   margin-top: 24px;
+
   font-size: 14px;
+
   line-height: 1.9;
+
   color: #bdbdbd;
 }
 
+
+/* ==================================================
+   사진 오류
+================================================== */
+
 .image-fallback {
   position: absolute;
+
   inset: 0;
+
   z-index: 0;
+
   display: none;
+
   align-items: center;
+
   justify-content: center;
+
   padding: 30px;
+
   text-align: center;
-  background: linear-gradient(145deg, #262626, #4b4540);
-  color: rgba(255,255,255,0.72);
+
+  background:
+    linear-gradient(
+      145deg,
+      #262626,
+      #4b4540
+    );
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
   font-size: 13px;
+
   line-height: 1.7;
 }
 
-.image-missing .image-fallback {
+
+.image-missing
+.image-fallback {
   display: flex;
 }
+
 
 .image-missing img {
   opacity: 0;
 }
 
+
+/* ==================================================
+   스크롤 애니메이션
+================================================== */
+
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+
+  transform:
+    translateY(28px);
+
+  transition:
+    opacity
+      0.9s
+      ease,
+
+    transform
+      0.9s
+      ease;
 }
+
 
 .reveal.show {
   opacity: 1;
-  transform: translateY(0);
+
+  transform:
+    translateY(0);
 }
+
+
+/* ==================================================
+   하트
+================================================== */
 
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.18); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.10); }
-  60% { transform: scale(1); }
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+
+  15% {
+    transform:
+      scale(1.18);
+  }
+
+
+  30% {
+    transform:
+      scale(1);
+  }
+
+
+  45% {
+    transform:
+      scale(1.10);
+  }
+
+
+  60% {
+    transform:
+      scale(1);
+  }
 }
 
+
+/* ==================================================
+   갤럭시 작은 화면
+================================================== */
+
 @media (max-width: 360px) {
-  .hero-content, .photo-text {
+
+  .hero-content,
+  .photo-text {
     left: 20px;
     right: 20px;
   }
+
+
   .intro {
     padding-left: 23px;
     padding-right: 23px;
   }
+
+
   .intro-title {
     font-size: 25px;
   }
+
+
+  /*
+    기존 570px 강제값도 제거.
+
+    작은 폰에서 확대되는 원인이었음.
+  */
   .photo {
-    min-height: 570px;
+    min-height: 410px;
+
+    height: 60svh;
+
+    max-height: 580px;
   }
+
+
   .photo-caption {
     font-size: 16px;
   }
+
+
   .letter {
     padding-left: 22px;
     padding-right: 22px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+
+/* ==================================================
+   모션 최소화 설정
+================================================== */
+
+@media
+(prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
-  .reveal, .photo-image, .heart {
+
+
+  .reveal,
+  .photo-image,
+  .heart {
     transition: none;
+
     animation: none;
   }
+
+
   .reveal {
     opacity: 1;
+
     transform: none;
   }
 }
