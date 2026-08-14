@@ -4,7 +4,6 @@ const siteContent = {
   hero: {
     image: "images/01.jpg",
 
-    // 첫 화면 사진 위치
     position: "50% 35%",
 
     kicker: "D + 600",
@@ -27,7 +26,7 @@ const siteContent = {
     {
       file: "images/02.jpg",
 
-      // 향수 만들러 간 날
+      // 01. 향수 만들러 간 날
       position: "50% 30%",
 
       caption:
@@ -37,7 +36,7 @@ const siteContent = {
     {
       file: "images/03.jpg",
 
-      // 반지 만들러 간 날
+      // 02. 반지 만들러 간 날
       position: "50% 35%",
 
       caption:
@@ -47,8 +46,8 @@ const siteContent = {
     {
       file: "images/04.jpg",
 
-      // 시각 체험
-      position: "50% 30%",
+      // 03. 오른쪽으로 이동
+      position: "38% 30%",
 
       caption:
         "공듀랑 같이 시각 체험 하러 간 날\n(흠, 이 때는 멋있었군)"
@@ -57,8 +56,8 @@ const siteContent = {
     {
       file: "images/05.jpg",
 
-      // 작년 여름
-      position: "50% 30%",
+      // 04. 오른쪽으로 살짝 이동
+      position: "44% 30%",
 
       caption:
         "작년 여름 우리의 모습.\n항상 내 눈에 들어오는 너의 모습"
@@ -67,8 +66,8 @@ const siteContent = {
     {
       file: "images/06.jpg",
 
-      // 졸업식
-      position: "47% 32%",
+      // 05. 왼쪽으로 이동
+      position: "68% 32%",
 
       caption:
         "공듀의 졸업식날.\n멋진 사회인이 된 우리 공듀"
@@ -77,8 +76,8 @@ const siteContent = {
     {
       file: "images/07.jpg",
 
-      // 마지막 사진
-      position: "50% 30%",
+      // 06. 왼쪽으로 이동
+      position: "65% 30%",
 
       caption:
         "앞으로도 지금처럼\n많은 시간을 같이 보내자."
